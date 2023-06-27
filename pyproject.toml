@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nvidia-smi-sender"
+version = "3.2.1"
+description = "send nvidia-smi GPU statistics to a remote collector"
+authors = ["Matt Stancliff <matt@genges.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "nvidia_smi_sender"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fire = "^0.5.0"
+httpx = "^0.24.1"
+orjson = "^3.9.1"
+loguru = "^0.7.0"
+
+[tool.poetry.scripts]
+nvidia-smi-sender = "nvidia_smi_sender.agent:cmd"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
